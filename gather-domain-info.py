@@ -10,6 +10,7 @@ w = whois.whois(sys.argv[1])
 ip = socket.gethostbyname((sys.argv[1]))
 
 print('Domain: ' + colored(str(sys.argv[1]), 'green') + '\n')
+print('Registrar: ' + colored(str(w.registrar) + ' - ' +str(w.registrar_name), 'green') + '\n') 
 print('Expiration date: ' + colored(str(w.expiration_date), 'green') + '\n')
 print('Authoritative name server:\n' + colored(str(w.name_servers), 'green') + '\n')
 print('DNS Lookup: www.' + str(sys.argv[1]) + ' points to: ' + colored(socket.gethostbyname('www.' +str(sys.argv[1])), 'green'))
